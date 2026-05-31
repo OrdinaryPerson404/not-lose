@@ -1,0 +1,325 @@
+.home-wall-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--color-primary);
+  padding-bottom: calc(var(--safe-area-bottom) + 80px);
+}
+
+.wall-header {
+  background: linear-gradient(135deg, #0066B3 0%, #004494 100%);
+  padding: var(--spacing-xxl);
+  color: var(--color-white);
+}
+
+.wall-hero {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.wall-icon-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wall-icon {
+  font-size: 56px;
+  z-index: 1;
+  animation: shine 2s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+.icon-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+.wall-title-group {
+  flex: 1;
+}
+
+.wall-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+}
+
+.wall-subtitle {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+}
+
+.wall-stats {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  margin: 0 var(--spacing-lg);
+  margin-top: -20px;
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--color-secondary);
+  border-radius: var(--border-radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-badge {
+  position: absolute;
+  top: var(--spacing-xs);
+  right: var(--spacing-xs);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badge-icon {
+  font-size: 14px;
+}
+
+.stat-primary {
+  background: linear-gradient(135deg, rgba(0, 102, 179, 0.1) 0%, rgba(0, 102, 179, 0.05) 100%);
+}
+
+.stat-accent {
+  background: linear-gradient(135deg, rgba(255, 140, 66, 0.1) 0%, rgba(255, 183, 77, 0.05) 100%);
+}
+
+.stat-value {
+  font-size: var(--font-size-xxl);
+  font-weight: 700;
+  color: var(--color-accent-blue);
+  margin-top: var(--spacing-sm);
+}
+
+.stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 102, 179, 0.2);
+  border-radius: 2px;
+  margin-top: var(--spacing-sm);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent-orange), #FF6B35);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.title-icon {
+  font-size: 20px;
+}
+
+.posts-container {
+  padding: 0 var(--spacing-lg);
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xxxl);
+}
+
+.empty-icon {
+  font-size: 72px;
+  margin-bottom: var(--spacing-md);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.empty-state p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.empty-hint {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-lg);
+}
+
+.empty-btn {
+  padding: var(--spacing-sm) var(--spacing-xl);
+  background: linear-gradient(135deg, var(--color-accent-blue) 0%, #0050A8 100%);
+  color: var(--color-white);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-sm);
+  box-shadow: 0 4px 12px rgba(0, 102, 179, 0.3);
+}
+
+.returned-card {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  display: flex;
+  gap: var(--spacing-md);
+  animation: slideUp 0.5s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-medal {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(255, 165, 0, 0.4);
+}
+
+.medal-icon {
+  font-size: 24px;
+}
+
+.card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card-title {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-badge {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: rgba(129, 199, 132, 0.2);
+  color: #388E3C;
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.card-journey {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  background: var(--color-secondary);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.journey-point {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.point-icon {
+  font-size: 16px;
+}
+
+.point-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.journey-line {
+  color: var(--color-accent-blue);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-thank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background: linear-gradient(135deg, rgba(255, 140, 66, 0.1) 0%, rgba(255, 183, 77, 0.1) 100%);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.thank-icon {
+  font-size: 16px;
+}
+
+.thank-value {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent-orange);
+  font-weight: 500;
+}
+
+.card-footer {
+  text-align: center;
+}
+
+.footer-time {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}

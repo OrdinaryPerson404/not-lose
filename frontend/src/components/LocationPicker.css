@@ -1,0 +1,33 @@
+.location-picker {
+  width: 100%;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+}
+
+.location-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  background: var(--color-secondary);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.location-item:active {
+  background: var(--color-accent-blue);
+  color: var(--color-white);
+}
+
+.location-item.selected {
+  background: var(--color-accent-blue);
+  color: var(--color-white);
+}
